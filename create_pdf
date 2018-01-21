@@ -1,0 +1,2 @@
+#!/bin/bash
+pdflatex presentation.tex presentation.pdf
