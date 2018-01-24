@@ -144,7 +144,7 @@ function has_travis_with_proselint {
 function get_points {
 
   username=$1
-  reponame=$1
+  reponame=$2
 
   # Start grading
 
@@ -163,6 +163,9 @@ function get_points {
   # 5. Have a README.md with a presentation
   point_five=`has_readme_with_presentation $username $reponame`
 
+  # 6. Have a .travis.yml with proselint
+  point_six=`has_travis_with_proselint $username $reponame`
+
   # Show report
   echo >&2 "Report"
   echo >&2 "1: correct_cpp_scoreboard: "$point_one
@@ -170,9 +173,10 @@ function get_points {
   echo >&2 "3: has README: "$point_three
   echo >&2 "4: has README with picture: "$point_four
   echo >&2 "5: has README with presentation: "$point_five
+  echo >&2 "6: has .travis.yml with proselint: "$point_six
 
 
-  n_points=$((point_one + point_two + point_three + point_four + point_five))
+  n_points=$((point_one + point_two + point_three + point_four + point_five + point_six))
   echo $n_points
 }
 
