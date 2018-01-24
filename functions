@@ -219,19 +219,21 @@ function get_points {
 # @param $1: filename
 function get_grade {
 
+  filename=$1
+
   # No text file results in the grade 1
-  if [[ ! -f $1 ]] ; 
+  if [[ ! -f $filename ]] ; 
   then
-    # echo >&2 "File '"$1"' not found"
+    # echo >&2 "File '"$filename"' not found"
     echo "1"
     return
   fi
 
   # Username is in the first line, after a whitespace
-  username=`cat grade_me.txt | head -n 1 | tail -n 1 | cut -d " " -f 2`
+  username=`cat $filename | head -n 1 | tail -n 1 | cut -d " " -f 2`
 
   # Reponame is in the first line, after a whitespace
-  reponame=`cat grade_me.txt | head -n 2 | tail -n 1 | cut -d " " -f 2`
+  reponame=`cat $filename | head -n 2 | tail -n 1 | cut -d " " -f 2`
 
   # echo >&2 "Username: "$username
   # echo >&2 "Reponame: "$reponame
