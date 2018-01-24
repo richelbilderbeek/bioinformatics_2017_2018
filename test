@@ -2,6 +2,31 @@
 
 source ./functions
 
+test_has_travis_with_proselint_absent_repo()
+{
+  assertEquals 0 `has_travis_with_proselint abentusername absentreponame`
+}
+
+
+test_has_travis_with_proselint_absent_proselint()
+{
+  assertEquals 0 `has_travis_with_proselint richelbilderbeek Cer2016`
+}
+
+test_has_travis_with_proselint_present()
+{
+  assertEquals 1 `has_travis_with_proselint richelbilderbeek travis_proselint`
+}
+
+test_has_travis_absent()
+{
+  assertEquals 0 `has_readme abentusername absentreponame`
+}
+
+test_has_travis_present()
+{
+  assertEquals 1 `has_readme richelbilderbeek correct_cpp`
+}
 
 test_has_readme_with_presentation_absent_repo()
 {

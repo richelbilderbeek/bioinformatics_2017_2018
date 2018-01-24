@@ -55,6 +55,7 @@ First lecture starts *sharply* at the time indicated.
 7|Travis checks for broken links|[Minimal example](https://github.com/richelbilderbeek/travis_markdown-link-check)
 8|Travis checks your last Python exercise's result to have a correct answer | [introduction](https://medium.com/ellisonleao/an-introduction-to-git-github-and-travis-ci-for-version-control-and-testing-ac97f158f520)
 9|250 commits | [a search engine that does not track you](https://duckduckgo.com), [set up git](https://github.com/richelbilderbeek/correct_cpp/blob/master/doc/set_up_git.md)
+10|Fix a bug in this course I was unaware of, using a Pull Request to this repo | Read the `test` and `functions` file
 
 Your grade will equal the number of exercise you did, with a minimum grade of 1.
 
