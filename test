@@ -2,6 +2,21 @@
 
 source ./functions
 
+test_has_readme_with_picture_absent_repo()
+{
+  assertEquals 0 `has_readme_with_picture abentusername absentreponame`
+}
+
+test_has_readme_with_picture_absent_picture()
+{
+  assertEquals 0 `has_readme_with_picture richelbilderbeek Cer2016`
+}
+
+test_has_readme_with_picture_present_picture()
+{
+  assertEquals 1 `has_readme_with_picture richelbilderbeek Dojo`
+}
+
 test_has_readme_absent()
 {
   assertEquals 0 `has_readme abentusername absentreponame`

@@ -38,6 +38,33 @@ function has_readme {
   fi
 }
 
+# Does the user's repo has a README.md with a picture?
+# @param $1: username
+# @param $2: reponame
+# @return 1 if pass, 0 if fails
+function has_readme_with_picture {
+  username=$1
+  reponame=$2
+
+  if [[ `has_readme $username $reponame` != 1 ]] ;
+  then
+    echo "0"
+    return
+  fi 
+  wget -q https://raw.githubusercontent.com/$username/$reponame/master/README.md -O tmp.txt
+
+  n_pics=`egrep "\!\[.*\]\(.*\.(png|jpg|jpeg|gif)\)" tmp.txt | wc --lines | cut -f 1 -d " "`
+
+  rm tmp.txt
+
+  if [[ $n_pics == 0 ]] ;
+  then
+    echo "0"
+  else
+    echo "1"
+  fi
+}
+
 # Get the number of points, for a known user and repo
 # @param $1: username
 # @param $2: reponame
@@ -63,9 +90,10 @@ function get_points {
   echo >&2 "Report"
   echo >&2 "1: correct_cpp_scoreboard: "$point_one
   echo >&2 "2: correct_cpp_hello: "$point_two
+  echo >&2 "3: README with picture: "$point_three
 
 
-  n_points=$((point_one + point_two))
+  n_points=$((point_one + point_two + point_three))
   echo $n_points
 }
 
