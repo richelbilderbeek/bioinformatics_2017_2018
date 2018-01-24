@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Show the grade, from the number of points
+# @param $1: n_points
+# @return Nothing
 function show_grade {
   n_points=$1
   echo "n_points: "$n_points
@@ -7,6 +10,24 @@ function show_grade {
   echo "n_points (after correcting for minumum): "$n_points
   echo "Grade: "$n_points
 }
+
+# Show the grade, from the number of points
+# @param $1: username
+# @param $2: reponame
+# @return 1 if pass, 0 if fails
+function pass_build {
+  travis status --repo $1/$2 | egrep "passed" | wc --lines
+}
+
+
+echo "Testing"
+echo "correct_cpp should pass:"
+must_be_one=`pass_build richelbilderbeek correct_cpp`
+if [[ $must_be_one != 1 ]]; then echo "Internal error"; exit 42; fi 
+
+echo "correct_cpp_scoreboard should fail:"
+must_be_zero=`pass_build richelbilderbeek correct_cpp_scoreboard`
+if [[ $must_be_zero != 0 ]]; then echo "Internal error"; exit 42; fi 
 
 n_points=0
 
@@ -27,3 +48,10 @@ echo "Username: "$username
 echo "Reponame: "$reponame
 
 # Use https://github.com/travis-ci/travis.rb
+
+
+travis status --repo $username/correct_cpp_scoreboard | egrep "passed" | wc --lines
+
+travis status --repo $username/correct_cpp_hello
+
+
