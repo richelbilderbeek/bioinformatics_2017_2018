@@ -1,64 +1,6 @@
 #!/bin/bash
 
-# Show the grade, from the number of points
-# @param $1: n_points
-# @return Nothing
-function show_grade {
-  n_points=$1
-  echo "n_points: "$n_points
-  if [[ n_points < 1 ]]; then $n_points=$((n_points+1)); fi
-  echo "n_points (after correcting for minumum): "$n_points
-  echo "Grade: "$n_points
-}
+source ./functions
 
-# Show the grade, from the number of points
-# @param $1: username
-# @param $2: reponame
-# @return 1 if pass, 0 if fails
-function pass_build {
-  travis status --repo $1/$2 --no-interactive 2>/dev/null | egrep "passed" | wc --words | cut -f 1 -d " "`
-}
-
-
-echo "Testing"
-echo "correct_cpp should pass:"
-must_be_one=`pass_build richelbilderbeek correct_cpp`
-if [[ $must_be_one != 1 ]]; then echo "Internal error"; exit 42; fi 
-
-echo "correct_cpp_scoreboard should fail:"
-must_be_zero=`pass_build richelbilderbeek correct_cpp_scoreboard`
-if [[ $must_be_zero != 0 ]]; then echo "Internal error"; exit 42; fi 
-
-n_points=0
-
-if [[ ! -f grade_me.txt ]] ; 
-then
-  echo "File 'grade_me.txt' not found" 
-  show_grade $n_points
-  exit
-fi
-
-# Username is in the first line, after a whitespace
-username=`cat grade_me.txt | head -n 1 | tail -n 1 | cut -d " " -f 1`
-
-# Reponame is in the first line, after a whitespace
-reponame=`cat grade_me.txt | head -n 2 | tail -n 1 | cut -d " " -f 2`
-
-echo "Username: "$username
-echo "Reponame: "$reponame
-
-# Start grading
-point_one=`pass_build $username correct_cpp_scoreboard`
-point_two=`pass_build $username correct_cpp_hello`
-
-# Show report
-echo "Report"
-echo "1: correct_cpp_scoreboard: "$point_one
-echo "2: correct_cpp_hello: "$point_two
-
-n_points=$((point_one + point_two))
-echo "n_points: "$n_points
-show_grade $n_points
-
-
-
+grade=`do_grade grade_me.txt`
+echo $grade

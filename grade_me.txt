@@ -1,2 +1,2 @@
-username: absent
-reponame: absent_too
+username: richelbilderbeek
+reponame: bioinformatics_2017_2018

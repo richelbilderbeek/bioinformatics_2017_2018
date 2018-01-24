@@ -40,12 +40,14 @@ function get_points {
   echo $n_points
 }
 
+# Get the grade, after extracing user and repo from file
+# @param $1: filename
 function get_grade {
 
   # No text file results in the grade 1
-  if [[ ! -f grade_me.txt ]] ; 
+  if [[ ! -f $1 ]] ; 
   then
-    # echo >&2 "File 'grade_me.txt' not found"
+    # echo >&2 "File '"$1"' not found"
     echo "1"
     return
   fi

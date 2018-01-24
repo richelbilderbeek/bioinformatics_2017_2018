@@ -27,4 +27,4 @@ install:
 
 script: 
   - ./test
-  # - ./do_grade
+  - ./do_grade
