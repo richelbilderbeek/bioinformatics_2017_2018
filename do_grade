@@ -3,4 +3,6 @@
 source ./functions
 
 grade=`get_grade grade_me.txt`
-echo $grade
+echo "---------------------------------"
+echo "GRADE: "$grade
+echo "---------------------------------"

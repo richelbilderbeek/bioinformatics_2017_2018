@@ -2,6 +2,17 @@
 
 source ./functions
 
+test_has_readme_absent()
+{
+  assertEquals 0 `has_readme abentusername absentreponame`
+}
+
+test_has_readme_present()
+{
+  assertEquals 1 `has_readme richelbilderbeek correct_cpp`
+}
+
+
 test_get_grade_no_grade_me()
 {
   assertEquals 1 `get_grade absent_file.txt`
