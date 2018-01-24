@@ -65,6 +65,33 @@ function has_readme_with_picture {
   fi
 }
 
+# Does the user's repo has a README.md with a presentation?
+# @param $1: username
+# @param $2: reponame
+# @return 1 if pass, 0 if fails
+function has_readme_with_presentation {
+  username=$1
+  reponame=$2
+
+  if [[ `has_readme $username $reponame` != 1 ]] ;
+  then
+    echo "0"
+    return
+  fi 
+  wget -q https://raw.githubusercontent.com/$username/$reponame/master/README.md -O tmp.txt
+
+  n_presentations=`egrep "\[.*\]\(.*\.(pdf|ppt|pptx|doc|docx)\)" tmp.txt | wc --lines | cut -f 1 -d " "`
+
+  rm tmp.txt
+
+  if [[ $n_presentations == 0 ]] ;
+  then
+    echo "0"
+  else
+    echo "1"
+  fi
+}
+
 # Get the number of points, for a known user and repo
 # @param $1: username
 # @param $2: reponame

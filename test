@@ -2,6 +2,22 @@
 
 source ./functions
 
+
+test_has_readme_with_presentation_absent_repo()
+{
+  assertEquals 0 `has_readme_with_presentation abentusername absentreponame`
+}
+
+test_has_readme_with_presentation_absent_presentation()
+{
+  assertEquals 0 `has_readme_with_presentation richelbilderbeek Cer2016`
+}
+
+test_has_readme_with_presentation_present_presentation()
+{
+  assertEquals 1 `has_readme_with_presentation richelbilderbeek BoostGraphTutorial`
+}
+
 test_has_readme_with_picture_absent_repo()
 {
   assertEquals 0 `has_readme_with_picture abentusername absentreponame`
