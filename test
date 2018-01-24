@@ -1,18 +1,18 @@
-#! /bin/sh
+#!/bin/bash
 
-. ./functions
+source ./functions
 
 test_pass_build_passes()
 {
   # richelbilderbeek/correct_cpp passes
-  assertEquals 1 $((pass_build richelbilderbeek correct_cpp))
+  assertEquals 1 `pass_build richelbilderbeek correct_cpp`
 }
 
 test_pass_build_fails()
 {
   # richelbilderbeek/correct_cpp_scoreboard passes fails
-  assertEquals 1 $((pass_build richelbilderbeek correct_cpp_scoreboard))
+  assertEquals 0 `pass_build richelbilderbeek correct_cpp_scoreboard`
 }
 
 # load shunit2
-. ../shunit2/source/2.1/src/shunit2
+. ../shunit2/shunit2

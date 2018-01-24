@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Show the grade, from the number of points
 # @param $1: n_points
 # @return Nothing
@@ -16,7 +17,7 @@ function show_grade {
 # @param $2: reponame
 # @return 1 if pass, 0 if fails
 function pass_build {
-  travis status --repo $1/$2 --no-interactive 2>/dev/null | egrep "passed" | wc --words | cut -f 1 -d " "`
+  travis status --repo $1/$2 --no-interactive 2>/dev/null | egrep "passed" | wc --words | cut -f 1 -d " "
 }
 
 function get_grade {
