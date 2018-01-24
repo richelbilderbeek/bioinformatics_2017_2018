@@ -2,6 +2,21 @@
 
 source ./functions
 
+test_count_commits_absent_repo()
+{
+  assertEquals 0 `count_commits abentownername absentreponame absentcommitername`
+}
+
+test_count_commits_absent_user()
+{
+  assertEquals 0 `count_commits torvalds linux richelbilderbeek`
+}
+
+test_count_commits_user()
+{
+  assertEquals 1 `count_commits richelbilderbeek Cer2016 richelbilderbeek`
+}
+
 test_get_username_absent_file()
 {
   if [[ -f tmp.txt ]] ; then rm tmp.txt; fi

@@ -195,9 +195,46 @@ function has_travis_with_python {
 }
 
 
+# Get the number of points, for a known user and repo
+# @param $1: ownername
+# @param $2: reponame
+# @param $3: commitername
+# @return 1 if pass, 0 if fails
+function count_commits {
 
-# git log --author="richelbilderbeek" | egrep "richelbilderbeek" | wc --lines
+  ownername=$1
+  reponame=$2
+  committername=$3
 
+  if [[ -f contributors ]] ; then rm contributors; fi
+
+  wget -q https://api.github.com/repos/$ownername/$reponame/stats/contributors 
+
+  if [[ @? != 0 ]] ; 
+  then
+    echo "0"
+    return
+  fi    
+
+  if [[ -f commit.txt ]] ; then rm commit.txt; fi
+
+  python collect_commits.py > commit.txt
+
+  rm contributors
+  cat commit.txt >&2
+
+  n_lines=`cat commit.txt | egrep $committername | wc --lines | cut -d " " -f 1`
+  if [[ n_lines == 0 ]] ;
+  then
+    rm commit.txt
+    echo "0"
+    return
+  fi
+
+  n_commits=`cat commit.txt | egrep $committername | cut -d "," -f 2`
+  rm commit.txt
+  echo $n_commits
+}
 
 # Get the number of points, for a known user and repo
 # @param $1: username
