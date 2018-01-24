@@ -182,7 +182,7 @@ function has_travis_with_python {
   fi 
   wget -q https://raw.githubusercontent.com/$username/$reponame/master/.travis.yml -O tmp.txt
 
-  n_lines=`egrep "python " tmp.txt | wc --lines | cut -f 1 -d " "`
+  n_lines=`egrep "python" tmp.txt | wc --lines | cut -f 1 -d " "`
 
   rm tmp.txt
 

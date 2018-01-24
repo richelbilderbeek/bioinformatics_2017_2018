@@ -41,6 +41,13 @@ First lecture starts *sharply* at the time indicated.
 
  * Fork this repo
  * Modify the file called `grade_me.txt`:
+ * Create a Pull Request. If your Pull Request improves this repository, mention it in the commit message
+ * Check the Travis build log, as it contains your grade
+ * If Travis CI gives an incorrect grade (it can be fooled), add this as a comment
+
+If Travis CI gives a too high grade of `X` points, and a human finds out, the grade is reduced by `2X`.
+
+Unless you improve this repository, your Pull Request will be rejected, to keep `grade_me.txt` intact.
 
 ## Grading exercise git and GitHub 
 
@@ -55,13 +62,15 @@ First lecture starts *sharply* at the time indicated.
 7|Travis checks for broken links|[Minimal example](https://github.com/richelbilderbeek/travis_markdown-link-check)
 8|Travis checks your last Python exercise's result to have a correct answer | [introduction](https://medium.com/ellisonleao/an-introduction-to-git-github-and-travis-ci-for-version-control-and-testing-ac97f158f520)
 9|250 commits | [a search engine that does not track you](https://duckduckgo.com), [set up git](https://github.com/richelbilderbeek/correct_cpp/blob/master/doc/set_up_git.md)
-10|Fix a bug in this course I was unaware of, using a Pull Request to this repo | Read the `test` and `functions` file
+10|Fix a bug in this course I was unaware of, using a Pull Request to this repo | Read the `test` and `functions` file, add both a positive and negative control
 
 Your grade will equal the number of exercise you did, with a minimum grade of 1.
 
+Your grades are determined using Travis CI for points 1-9 and a human for point 10.
+
 Deadline for these exercises are Friday the 26th January 2018 at 17:00.
 
-Grading will be done before Saturday 27th January at 17:00.
+Grades will be entered before Saturday 27th January at 17:00.
 
 ## External links
 
