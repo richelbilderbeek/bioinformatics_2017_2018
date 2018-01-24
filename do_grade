@@ -8,7 +8,8 @@ function show_grade {
 }
 
 
-if [ ! -f grade_me.txt ]; then
+if [[ ! -f grade_me.txt ]] ; 
+then
   echo "File 'grade_me.txt' not found 
   show_grade()
   exit
