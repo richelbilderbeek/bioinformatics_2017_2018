@@ -218,13 +218,13 @@ function count_commits {
 
   if [[ -f commit.txt ]] ; then rm commit.txt; fi
 
-  python collect_commits.py > commit.txt
+  ./collect_commits.py > commit.txt
 
   rm contributors
-  cat commit.txt >&2
+  cat commit.txt > tmp_$1_$2_$3
 
   n_lines=`cat commit.txt | egrep $committername | wc --lines | cut -d " " -f 1`
-  if [[ n_lines == 0 ]] ;
+  if [[ $n_lines == 0 ]] ;
   then
     rm commit.txt
     echo "0"

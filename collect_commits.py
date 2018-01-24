@@ -1,4 +1,4 @@
-#!/bin/python
+#!/usr/bin/env python
 
 # Creates a list with
 # [username], [commits]
