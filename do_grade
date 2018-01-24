@@ -1,16 +1,16 @@
 #!/bin/bash
 
-n_points=0
-
 function show_grade {
-  if [[ n_points < 1 ]]; then n_points=1; fi
+  n_points=$1
+  if [[ n_points < 1 ]]; then $n_points=$((n_points+1)); fi
   echo "Grade: "$n_points
 }
 
+n_points=0
 
 if [[ ! -f grade_me.txt ]] ; 
 then
   echo "File 'grade_me.txt' not found" 
-  show_grade
+  show_grade $n_points
   exit
 fi
