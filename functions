@@ -85,15 +85,18 @@ function get_points {
   # 3. Have a README.md at repo
   point_three=`has_readme $username $reponame`
   
+  # 4. Have a README.md with a picture
+  point_four=`has_readme_with_picture $username $reponame`
 
   # Show report
   echo >&2 "Report"
   echo >&2 "1: correct_cpp_scoreboard: "$point_one
   echo >&2 "2: correct_cpp_hello: "$point_two
-  echo >&2 "3: README with picture: "$point_three
+  echo >&2 "3: has README: "$point_three
+  echo >&2 "4: has README with picture: "$point_four
 
 
-  n_points=$((point_one + point_two + point_three))
+  n_points=$((point_one + point_two + point_three + point_four))
   echo $n_points
 }
 
