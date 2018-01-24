@@ -49,8 +49,8 @@ First lecture starts *sharply* at the time indicated.
 1|Do correct_cpp_scoreboard|[correct_cpp_scoreboard](https://github.com/richelbilderbeek/correct_cpp_scoreboard)
 2|correct_cpp_hello|[correct_cpp_hello](https://github.com/richelbilderbeek/correct_cpp_hello)
 3|Create a README.md file for your research | [GitHub article: create a README.md](https://help.github.com/articles/about-readmes/)
-4|Show a relevant picture in the README.md of your GitHub|[GitHub guide: mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-5|Link to a relevent presentation in the README.md of your GitHub|[GitHub article: basic writing and formatting syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/#relative-links)
+4|Show a picture (`jpg`, `png`, `gif`, `jpeg`) in the README.md of your GitHub|[GitHub guide: mastering Markdown](https://guides.github.com/features/mastering-markdown/)
+5|Link to a presentation or documentation (`pdf`, `ppt`, `pptx`, `doc`, `docx`) in the README.md of your GitHub|[GitHub article: basic writing and formatting syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/#relative-links)
 6|Travis calls proselint on README.md|[Minimal example](https://github.com/richelbilderbeek/travis_proselint)
 7|Travis checks for broken links|[Minimal example](https://github.com/richelbilderbeek/travis_markdown-link-check)
 8|Travis checks your last Python exercise's result to have a correct answer | [introduction](https://medium.com/ellisonleao/an-introduction-to-git-github-and-travis-ci-for-version-control-and-testing-ac97f158f520)
@@ -71,3 +71,5 @@ Grading will be done before Saturday 27th January at 17:00.
  * [CppCast episode 103: Travis CI with Richel Bilderbeek](https://www.youtube.com/watch?v=p30AA9JLVJY) by Jason Turner and Rob Irving
  * [C++ Weekly, episode 79: Intro To Travis CI](https://www.youtube.com/watch?v=3ulKzD2cmSw) by Jason Turner
  * [a search engine that does not track you](https://duckduckgo.com)
+
+![An R](R.png)
