@@ -1,5 +1,15 @@
 #!/bin/bash
 
+n_points=0
+
+function show_grade {
+  if [[ n_points < 1 ]]; then n_points=1; fi
+  echo "Grade: "$n_points
+}
+
+
 if [ ! -f grade_me.txt ]; then
   echo "File 'grade_me.txt' not found 
+  show_grade()
+  exit
 fi
