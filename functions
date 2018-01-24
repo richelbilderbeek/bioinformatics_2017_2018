@@ -137,6 +137,37 @@ function has_travis_with_proselint {
 }
 
 
+
+
+# Does the user's repo have a .travis.yml with proselint?
+# @param $1: username
+# @param $2: reponame
+# @return 1 if pass, 0 if fails
+function has_travis_find_find_dead_links {
+  username=$1
+  reponame=$2
+
+  if [[ `has_travis $username $reponame` != 1 ]] ;
+  then
+    echo "0"
+    return
+  fi 
+  wget -q https://raw.githubusercontent.com/$username/$reponame/master/.travis.yml -O tmp.txt
+
+  n_lines=`egrep "markdown-link-check" tmp.txt | wc --lines | cut -f 1 -d " "`
+
+  rm tmp.txt
+
+  if [[ $n_lines == 0 ]] ;
+  then
+    echo "0"
+  else
+    echo "1"
+  fi
+}
+
+
+
 # Get the number of points, for a known user and repo
 # @param $1: username
 # @param $2: reponame
@@ -166,6 +197,9 @@ function get_points {
   # 6. Have a .travis.yml with proselint
   point_six=`has_travis_with_proselint $username $reponame`
 
+  # 7. Have a .travis.yml that checks dead links
+  point_seven=`has_travis_find_find_dead_links $username $reponame`
+
   # Show report
   echo >&2 "Report"
   echo >&2 "1: correct_cpp_scoreboard: "$point_one
@@ -174,9 +208,10 @@ function get_points {
   echo >&2 "4: has README with picture: "$point_four
   echo >&2 "5: has README with presentation: "$point_five
   echo >&2 "6: has .travis.yml with proselint: "$point_six
+  echo >&2 "7: has .travis.yml that checks dead links: "$point_seven
 
 
-  n_points=$((point_one + point_two + point_three + point_four + point_five + point_six))
+  n_points=$((point_one + point_two + point_three + point_four + point_five + point_six + point_seven))
   echo $n_points
 }
 

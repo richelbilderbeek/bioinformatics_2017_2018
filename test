@@ -2,11 +2,28 @@
 
 source ./functions
 
+test_has_travis_find_find_dead_links_absent_repo()
+{
+  assertEquals 0 `has_travis_find_find_dead_links abentusername absentreponame`
+}
+
+test_has_travis_find_find_dead_links_absent()
+{
+  assertEquals 0 `has_travis_find_find_dead_links richelbilderbeek Cer2016`
+}
+
+test_has_travis_find_find_dead_links_present()
+{
+  assertEquals 1 `has_travis_find_find_dead_links richelbilderbeek travis_markdown-link-check`
+}
+
+
+
+
 test_has_travis_with_proselint_absent_repo()
 {
   assertEquals 0 `has_travis_with_proselint abentusername absentreponame`
 }
-
 
 test_has_travis_with_proselint_absent_proselint()
 {
