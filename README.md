@@ -31,80 +31,36 @@ First lecture starts *sharply* at the time indicated.
     * what is a merge conflict?
  * Travis CI #1: 
     * why is CI important?
-    
     * how to setup a pipeline
 
 
 ## Grading exercise git and GitHub 
 
-You will be graded on three things:
+Exercise|Information
+---|---
+Do correct_cpp_scoreboard|[correct_cpp_scoreboard](https://github.com/richelbilderbeek/correct_cpp_scoreboard)
+correct_cpp_hello|[correct_cpp_hello](https://github.com/richelbilderbeek/correct_cpp_hello)
+Create a GitHub for your research|[GitHub help: create a repo](https://help.github.com/articles/create-a-repo/)
+Create a README.md file for your research | [GitHub article: create a README.md](https://help.github.com/articles/about-readmes/)
+Show a relevant picture in the README.md of your GitHub|[GitHub guide: mastering Markdown](https://guides.github.com/features/mastering-markdown/)
+Link to a relevent presentation in the README.md of your GitHub|[GitHub article: basic writing and formatting syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/#relative-links)
+Travis calls proselint on README.md|[Minimal example](https://github.com/richelbilderbeek/travis_proselint)
+Travis checks for broken links|[Minimal example](https://github.com/richelbilderbeek/travis_markdown-link-check)
+Travis checks your last Python exercise's result to have a correct answer | [introduction](https://medium.com/ellisonleao/an-introduction-to-git-github-and-travis-ci-for-version-control-and-testing-ac97f158f520)
+250 commits | [a search engine that does not track you](https://duckduckgo.com), [set up git](https://github.com/richelbilderbeek/correct_cpp/blob/master/doc/set_up_git.md)
 
- * The GitHub you create for your project
- * Your GitHub profile
- * A document titled 'The Grade I Deserve Is ...'
+Your grade will equal the number of exercise you did, with a minimum grade of 1.
 
-Deadline for these is at Friday the 20th of January 18:00 (note: with your GitHub work, I will take a look at the repository at the last time before 18:01).
+Deadline for these exercises are Friday the 26th January 2018 at 17:00.
 
-The GitHub you create for your project should demonstrate that you've explored the possibilities of GitHub.
-Possibilities to explore are, for example:
+Grading will be done before Saturday 27th January at 17:00.
 
- * Create a nice `README.md` with useful pictures
- * Put your TODO list at the Issues
- * Add a license
- * Add a `.gitignore` file
- * Issues that are closed
- * Make a commit with the right username and email address
- * Multiple commits with meaningful commit messages
- * A merge conflict that has been checked in, then fixed in a later commit, e.g. [Fairytale_test](https://github.com/Lumphie/Fairytale_test)
- * A complete deletion of the GitHub its content, that has been undone in the next commit
- * A Pull Request from someone else, that has been accepted
- * A Pull Request from someone else, that has been rejected
- * Create more branches
+## External links
 
-Also the GitHub profile should demonstrate that you've explored the possibilties of GitHub.
-Possibilities are, for example:
-
- * A profile picture
- * Becoming a collaborator at another GitHub and add content
- * Issue posted at GitHubs you are not a collaborator of
- * A GitHub you have forked
- * A successfull Pull Request you have made to another GitHub
- * A Pull Request you've made to another GitHub, that has been rejected
- * Following people
- * Starring GitHub projects
-
-The document titled 'The Grade I Deserve Is ...' should be a Markdown file on your GitHub. Your README.md should mention it, so it can be found easily.
-
-The document should convince the reader which grade you deserve on today's exercise. Aim for a 6 when you just did the bare minimum, aim for an 8 when you did your best. The document should have few words and many screenshots. It *should* not be a professional document: you will waste your time when you make that document pretty.
-
-Things that have low/none impact for your grade:
-
- * Biological relevance
- * Spelling errors
- * Slick looks
- 
-For those going for a high grade:
-
- * Fix more complex Issues, especially of your classmates
- * Improve the code of your classmates
- * Experiment with Git and GitHub features that I have not described
- * Use Travis CI to check something
- * Display a Travis CI badge
-
-For foreigners, this is (my interpretation of) the Dutch number scale:
-
-* 10: Perfect (nearly impossible to achieve)
-* 9: Excellent (rare)
-* 8: Good
-* 7: Okay
-* 6: Mediocre
-* 5: Sloppy
-* 4: Bad (rare)
-* 3: Terrible (very rare)
-* 2: Utter crap (extremely rare)
-* 1: Did not do anything
-
-## Presentation Git en GitHub 
-
- * Presentation Kees: [here](20170120Git and GitHub.pptx)
- * Presentation Richel (in 2015-2016 course): [here](https://github.com/richelbilderbeek/CppPresentations/blob/master/Git.pdf)
+ * [git and GitHub](https://github.com/richelbilderbeek/CppPresentations/blob/master/Git.pdf) by Richel Bilderbeek
+ * [Correct C++](https://github.com/richelbilderbeek/correct_cpp) by Richel Bilderbeek, course with many guides how to use git, GitHub
+ * [An introduction to Git, GitHub and Travis CI for version control and testing (uses Python)](https://medium.com/ellisonleao/an-introduction-to-git-github-and-travis-ci-for-version-control-and-testing-ac97f158f520) by Ellison Leao
+ * [Simplify C++ article about Travis CI](https://arne-mertz.de/2017/04/continuous-integration-travis-ci) by Richel Bilderbeek
+ * [CppCast episode 103: Travis CI with Richel Bilderbeek](https://www.youtube.com/watch?v=p30AA9JLVJY) by Jason Turner and Rob Irving
+ * [C++ Weekly, episode 79: Intro To Travis CI](https://www.youtube.com/watch?v=3ulKzD2cmSw) by Jason Turner
+ * [a search engine that does not track you](https://duckduckgo.com)
