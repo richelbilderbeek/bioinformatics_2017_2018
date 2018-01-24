@@ -1,2 +1,11 @@
+
+install:
+  # Check Travis CI build status, from https://gist.github.com/ndbroadbent/1708408
+  - curl -sL raw.github.com/gist/1676577/travis.rb > ~/bin/travis \
+    && chmod +x ~/bin/travis
+  - gem install hub | tail -2
+  - ruby -e 'require "json"' 2>/dev/null || gem install json
+
 script: 
-  ./do_grade
+  - travis https://github.com/richelbilderbeek/correct_cpp_scoreboard
+  - ./do_grade
