@@ -1,7 +1,8 @@
 
 install:
   # Need ruby-dev version
-  - sudo apt-get install ruby2.0-dev
+  - apt-cache search ruby*-dev
+  - sudo apt-get install ruby2.1-dev
   # Must have at least Ruby 1.9.3 (2.0.0 recommended) for travis CLI
   - ruby -v
   # Use https://github.com/travis-ci/travis.rb
