@@ -17,37 +17,53 @@ function show_grade {
 # @param $2: reponame
 # @return 1 if pass, 0 if fails
 function pass_build {
-  travis status --repo $1/$2 --no-interactive 2>/dev/null | egrep "passed" | wc --words | cut -f 1 -d " "
+  pass=`travis status --repo $1/$2 --no-interactive 2>/dev/null | egrep "passed" | wc --words | cut -f 1 -d " "`
+  echo $pass
 }
 
-function get_grade {
-
-  n_points=0
-
-  if [[ ! -f grade_me.txt ]] ; 
-  then
-    echo "File 'grade_me.txt' not found" 
-    return $n_points
-  fi
-
-  # Username is in the first line, after a whitespace
-  username=`cat grade_me.txt | head -n 1 | tail -n 1 | cut -d " " -f 1`
-
-  # Reponame is in the first line, after a whitespace
-  reponame=`cat grade_me.txt | head -n 2 | tail -n 1 | cut -d " " -f 2`
-
-  echo "Username: "$username
-  echo "Reponame: "$reponame
+# Get the number of points, for a known user and repo
+# @param $1: username
+# @param $2: reponame
+# @return 1 if pass, 0 if fails
+function get_points {
 
   # Start grading
   point_one=`pass_build $username correct_cpp_scoreboard`
   point_two=`pass_build $username correct_cpp_hello`
 
   # Show report
-  echo "Report"
-  echo "1: correct_cpp_scoreboard: "$point_one
-  echo "2: correct_cpp_hello: "$point_two
+  echo >&2 "Report"
+  echo >&2 "1: correct_cpp_scoreboard: "$point_one
+  echo >&2 "2: correct_cpp_hello: "$point_two
 
   n_points=$((point_one + point_two))
-  return $n_points
+  echo $n_points
+}
+
+function get_grade {
+
+  # No text file results in the grade 1
+  if [[ ! -f grade_me.txt ]] ; 
+  then
+    # echo >&2 "File 'grade_me.txt' not found"
+    echo "1"
+    return
+  fi
+
+  # Username is in the first line, after a whitespace
+  username=`cat grade_me.txt | head -n 1 | tail -n 1 | cut -d " " -f 2`
+
+  # Reponame is in the first line, after a whitespace
+  reponame=`cat grade_me.txt | head -n 2 | tail -n 1 | cut -d " " -f 2`
+
+  # echo >&2 "Username: "$username
+  # echo >&2 "Reponame: "$reponame
+ 
+  grade=`get_points $username $reponame`
+  if [[ $grade < 1 ]]; 
+  then 
+    echo "1"; 
+  else 
+    echo $grade
+  fi
 }

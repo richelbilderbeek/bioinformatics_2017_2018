@@ -2,6 +2,24 @@
 
 source ./functions
 
+test_get_grade_no_grade_me()
+{
+  if [[ -f grade_me.txt ]] ; 
+  then
+    rm grade_me.txt
+  fi
+  assertEquals 1 `get_grade`
+}
+
+test_get_grade_fail_all()
+{
+  echo "username: absent" > grade_me.txt
+  echo "reponame: absent_too" >> grade_me.txt
+  echo "get_grade result: "`get_grade`
+  echo "Test:"
+  assertEquals 1 `get_grade`
+}
+
 test_pass_build_passes()
 {
   # richelbilderbeek/correct_cpp passes
