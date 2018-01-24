@@ -1,4 +1,9 @@
 install:
+  # Get my folder
+  - my_github=${PWD##*/}  
+  # shunit2
+  - cd ..; git clone https://github.com/kward/shunit2.git; cd $my_github
+  # Travis CLI
   # From https://github.com/travis-ci/travis.rb/issues/391#issuecomment-208376668
   - sudo apt-get install python-software-properties
   - sudo apt-add-repository -y ppa:brightbox/ruby-ng
@@ -21,4 +26,5 @@ install:
   - travis --version --no-interactive 2>/dev/null
 
 script: 
+  - ./test
   - ./do_grade
