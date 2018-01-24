@@ -47,11 +47,20 @@ reponame=`cat grade_me.txt | head -n 2 | tail -n 1 | cut -d " " -f 2`
 echo "Username: "$username
 echo "Reponame: "$reponame
 
-# Use https://github.com/travis-ci/travis.rb
+# Start grading
+point_one=`pass_build $username correct_cpp_scoreboard`
+point_two=`pass_build $username correct_cpp_hello`
+
+# Show report
+echo "Report"
+echo "1: correct_cpp_scoreboard: "$point_one
+echo "2: correct_cpp_hello: "$point_two
+
+n_points=$((point_one + point_two))
+echo "n_points: "$n_points
+show_grade $n_points
 
 
-travis status --repo $username/correct_cpp_scoreboard | egrep "passed" | wc --lines
 
-travis status --repo $username/correct_cpp_hello
 
 
