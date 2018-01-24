@@ -25,3 +25,5 @@ reponame=`cat grade_me.txt | head -n 2 | tail -n 1 | cut -d " " -f 2`
 
 echo "Username: "$username
 echo "Reponame: "$reponame
+
+# Use https://github.com/travis-ci/travis.rb

@@ -1,8 +1,12 @@
 
 install:
-  # Check Travis CI build status, from https://gist.github.com/ndbroadbent/1708408
-  - gem install hub | tail -2
-  - ruby -e 'require "json"' 2>/dev/null || gem install json
+  # Must be done locally
+  # - sudo apt-get install ruby2.3-dev
+  # Must have at least Ruby 1.9.3 (2.0.0 recommended) for travis CLI
+  - ruby -v
+  # Use https://github.com/travis-ci/travis.rb
+  - sudo gem install travis -v 1.8.8 --no-rdoc --no-ri
+  - travis version
 
 script: 
   - ./do_grade
