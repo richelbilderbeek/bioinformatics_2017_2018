@@ -1,6 +1,6 @@
 #! /bin/sh
 
-. functions
+. ./functions
 
 test_pass_build_passes()
 {
