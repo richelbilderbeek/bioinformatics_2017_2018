@@ -36,18 +36,18 @@ First lecture starts *sharply* at the time indicated.
 
 ## Grading exercise git and GitHub 
 
-Exercise|Information
----|---
-Do correct_cpp_scoreboard|[correct_cpp_scoreboard](https://github.com/richelbilderbeek/correct_cpp_scoreboard)
-correct_cpp_hello|[correct_cpp_hello](https://github.com/richelbilderbeek/correct_cpp_hello)
-Create a GitHub for your research|[GitHub help: create a repo](https://help.github.com/articles/create-a-repo/)
-Create a README.md file for your research | [GitHub article: create a README.md](https://help.github.com/articles/about-readmes/)
-Show a relevant picture in the README.md of your GitHub|[GitHub guide: mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-Link to a relevent presentation in the README.md of your GitHub|[GitHub article: basic writing and formatting syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/#relative-links)
-Travis calls proselint on README.md|[Minimal example](https://github.com/richelbilderbeek/travis_proselint)
-Travis checks for broken links|[Minimal example](https://github.com/richelbilderbeek/travis_markdown-link-check)
-Travis checks your last Python exercise's result to have a correct answer | [introduction](https://medium.com/ellisonleao/an-introduction-to-git-github-and-travis-ci-for-version-control-and-testing-ac97f158f520)
-250 commits | [a search engine that does not track you](https://duckduckgo.com), [set up git](https://github.com/richelbilderbeek/correct_cpp/blob/master/doc/set_up_git.md)
+#|Exercise|Information
+---|---|---
+1|Do correct_cpp_scoreboard|[correct_cpp_scoreboard](https://github.com/richelbilderbeek/correct_cpp_scoreboard)
+2|correct_cpp_hello|[correct_cpp_hello](https://github.com/richelbilderbeek/correct_cpp_hello)
+3|Create a GitHub for your research|[GitHub help: create a repo](https://help.github.com/articles/create-a-repo/)
+4|Create a README.md file for your research | [GitHub article: create a README.md](https://help.github.com/articles/about-readmes/)
+5|Show a relevant picture in the README.md of your GitHub|[GitHub guide: mastering Markdown](https://guides.github.com/features/mastering-markdown/)
+6|Link to a relevent presentation in the README.md of your GitHub|[GitHub article: basic writing and formatting syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/#relative-links)
+7|Travis calls proselint on README.md|[Minimal example](https://github.com/richelbilderbeek/travis_proselint)
+8|Travis checks for broken links|[Minimal example](https://github.com/richelbilderbeek/travis_markdown-link-check)
+9|Travis checks your last Python exercise's result to have a correct answer | [introduction](https://medium.com/ellisonleao/an-introduction-to-git-github-and-travis-ci-for-version-control-and-testing-ac97f158f520)
+10|250 commits | [a search engine that does not track you](https://duckduckgo.com), [set up git](https://github.com/richelbilderbeek/correct_cpp/blob/master/doc/set_up_git.md)
 
 Your grade will equal the number of exercise you did, with a minimum grade of 1.
 

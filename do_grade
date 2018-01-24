@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ ! -f grade_me.txt ]; then
+  echo "File 'grade_me.txt' not found 
+fi
