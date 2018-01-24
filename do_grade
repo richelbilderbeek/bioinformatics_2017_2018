@@ -14,3 +14,10 @@ then
   show_grade $n_points
   exit
 fi
+
+
+username=`cat grade_me.txt | head -n 1 | cut -d " " -f 1`
+reponame=`cat grade_me.txt | head -n 1 | cut -d " " -f 2`
+
+echo "Username: "$username
+echo "Reponame: "$reponame
