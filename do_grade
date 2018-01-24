@@ -16,7 +16,7 @@ function show_grade {
 # @param $2: reponame
 # @return 1 if pass, 0 if fails
 function pass_build {
-  travis status --repo $1/$2 | egrep "passed" | wc --lines
+  travis status --repo $1/$2 --no-interactive 2>/dev/null | egrep "passed" | wc --words | cut -f 1 -d " "`
 }
 
 
@@ -59,8 +59,6 @@ echo "2: correct_cpp_hello: "$point_two
 n_points=$((point_one + point_two))
 echo "n_points: "$n_points
 show_grade $n_points
-
-
 
 
 

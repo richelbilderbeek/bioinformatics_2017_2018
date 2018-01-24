@@ -1,16 +1,24 @@
-
 install:
-  # C++17
-  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-  - sudo apt-get update -qq
-  # Need ruby-dev version
-  - apt-cache search ruby*-dev
-  - sudo apt-get install ruby-dev
+  # From https://github.com/travis-ci/travis.rb/issues/391#issuecomment-208376668
+  - sudo apt-get install python-software-properties
+  - sudo apt-add-repository -y ppa:brightbox/ruby-ng
+  - sudo apt-get update
+  - sudo apt-get install ruby2.1 ruby-switch
+  - sudo ruby-switch --set ruby2.1
+  - sudo apt-get install ruby2.1-dev
   # Must have at least Ruby 1.9.3 (2.0.0 recommended) for travis CLI
   - ruby -v
   # Use https://github.com/travis-ci/travis.rb
   - sudo gem install travis -v 1.8.8 --no-rdoc --no-ri
-  - travis version
+  # Add things added when starting interactive mode
+  - sudo gem pristine executable-hooks --version 1.3.2
+  - sudo gem pristine gem-wrappers --version 1.3.2
+  - sudo gem pristine gem-wrappers --version 1.2.7
+  - sudo gem pristine nokogiri --version 1.8.1
+  # From https://stackoverflow.com/a/39866401, useless
+  # - sudo gem pristine --all
+  # Show travis CLI version
+  - travis --version --no-interactive 2>/dev/null
 
 script: 
   - ./do_grade
