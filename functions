@@ -195,6 +195,10 @@ function has_travis_with_python {
 }
 
 
+
+# git log --author="richelbilderbeek" | egrep "richelbilderbeek" | wc --lines
+
+
 # Get the number of points, for a known user and repo
 # @param $1: username
 # @param $2: reponame
