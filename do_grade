@@ -2,7 +2,9 @@
 
 function show_grade {
   n_points=$1
+  echo "n_points: "$n_points
   if [[ n_points < 1 ]]; then $n_points=$((n_points+1)); fi
+  echo "n_points (after correcting for minumum): "$n_points
   echo "Grade: "$n_points
 }
 
@@ -15,9 +17,11 @@ then
   exit
 fi
 
+# Username is in the first line, after a whitespace
+username=`cat grade_me.txt | head -n 1 | tail -n 1 | cut -d " " -f 1`
 
-username=`cat grade_me.txt | head -n 1 | cut -d " " -f 1`
-reponame=`cat grade_me.txt | head -n 1 | cut -d " " -f 2`
+# Reponame is in the first line, after a whitespace
+reponame=`cat grade_me.txt | head -n 2 | tail -n 1 | cut -d " " -f 2`
 
 echo "Username: "$username
 echo "Reponame: "$reponame

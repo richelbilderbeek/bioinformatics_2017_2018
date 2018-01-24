@@ -1,7 +1,7 @@
 
 install:
   # Check Travis CI build status, from https://gist.github.com/ndbroadbent/1708408
-  - curl -sL https://gist.github.com/ndbroadbent/1708408#file-travis-rb > get_travis_build_state
+  - curl -sL https://gist.githubusercontent.com/ndbroadbent/1708408/raw/9922a95298b7cc31bf476710a38fcc2169ce087b/travis.rb > get_travis_build_state
   - chmod +x get_travis_build_state
   - gem install hub | tail -2
   - ruby -e 'require "json"' 2>/dev/null || gem install json

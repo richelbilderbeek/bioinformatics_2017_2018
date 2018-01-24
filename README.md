@@ -37,6 +37,10 @@ First lecture starts *sharply* at the time indicated.
     * why is CI important?
     * how to setup a pipeline
 
+## Submitting your grade
+
+ * Fork this repo
+ * Modify the file called `grade_me.txt`:
 
 ## Grading exercise git and GitHub 
 
