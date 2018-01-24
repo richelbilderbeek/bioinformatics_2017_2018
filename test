@@ -12,6 +12,7 @@ test_get_grade_fail_all()
   echo "username: absent" > fail_all.txt
   echo "reponame: absent_too" >> fail_all.txt
   assertEquals 1 `get_grade fail_all.txt`
+  rm fail_all.txt
 }
 
 test_pass_build_passes()

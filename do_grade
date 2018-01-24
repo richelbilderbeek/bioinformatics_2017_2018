@@ -2,5 +2,5 @@
 
 source ./functions
 
-grade=`do_grade grade_me.txt`
+grade=`get_grade grade_me.txt`
 echo $grade
