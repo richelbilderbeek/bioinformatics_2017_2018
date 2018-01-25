@@ -2,6 +2,16 @@
 
 source ./functions
 
+test_assert_yes()
+{
+  assertTrue "[[ 2 > 1 ]]"
+}
+
+test_assert_no()
+{
+  assertTrue "[[ 1 > 2 ]]"
+}
+
 test_count_commits_absent_repo()
 {
   assertEquals 0 `count_commits abentownername absentreponame absentcommitername`
