@@ -254,13 +254,13 @@ function has_many_commits {
   reponame=$2
   committername=$3
 
-  echo "ownername: "$ownername >&2
-  echo "reponame: "$reponame >&2
-  echo "committername: "$committername >&2
+  # echo "ownername: "$ownername >&2
+  # echo "reponame: "$reponame >&2
+  # echo "committername: "$committername >&2
 
-  # n_commits=`count_commits $ownername $reponame $committername`
-  n_commits=`count_commits richelbilderbeek Cer2016 richelbilderbeek`
-  echo "n_commits: "$n_commits >&2
+  n_commits=`count_commits $ownername $reponame $committername`
+  # n_commits=`count_commits richelbilderbeek Cer2016 richelbilderbeek`
+  # echo "n_commits: "$n_commits >&2
 
   if [[ "$n_commits" < 250 ]] ;
   then

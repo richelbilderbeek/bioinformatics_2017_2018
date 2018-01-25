@@ -12,6 +12,21 @@ test_has_many_commits_no()
   assertEquals 0 `has_many_commits isocpp CppCoreGuidelines richelbilderbeek`
 }
 
+test_count_commits_absent_repo()
+{
+  assertEquals 0 `count_commits abentownername absentreponame absentcommitername`
+}
+
+test_count_commits_absent_user()
+{
+  assertEquals 0 `count_commits torvalds linux richelbilderbeek`
+}
+
+test_count_commits_user()
+{
+  assertEquals 706 `count_commits richelbilderbeek Cer2016 richelbilderbeek`
+}
+
 test_get_username_absent_file()
 {
   if [[ -f tmp.txt ]] ; then rm tmp.txt; fi
@@ -35,21 +50,6 @@ test_get_username()
 test_assert_yes()
 {
   assertTrue "[[ 2 > 1 ]]"
-}
-
-test_count_commits_absent_repo()
-{
-  assertEquals 0 `count_commits abentownername absentreponame absentcommitername`
-}
-
-test_count_commits_absent_user()
-{
-  assertEquals 0 `count_commits torvalds linux richelbilderbeek`
-}
-
-test_count_commits_user()
-{
-  assertEquals 706 `count_commits richelbilderbeek Cer2016 richelbilderbeek`
 }
 
 test_has_travis_with_python_absent_repo()
