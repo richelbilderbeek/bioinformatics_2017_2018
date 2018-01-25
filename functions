@@ -210,12 +210,6 @@ function count_commits {
 
   wget -q https://api.github.com/repos/$ownername/$reponame/stats/contributors -O contributors
 
-  if [[ @? != 0 ]] ; 
-  then
-    echo "0"
-    return
-  fi    
-
   if [[ ! -f contributors ]] ; 
   then 
     echo "0"
@@ -227,7 +221,6 @@ function count_commits {
   ./collect_commits.py > commit.txt
 
   rm contributors
-  cat commit.txt >&2
 
   n_lines=`cat commit.txt | egrep $committername | wc --lines | cut -d " " -f 1`
   if [[ $n_lines == 0 ]] ;
