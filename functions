@@ -208,10 +208,14 @@ function count_commits {
 
   if [[ -f contributors ]] ; then rm contributors; fi
 
+  # Will always create a 'contributors' file
   wget -q https://api.github.com/repos/$ownername/$reponame/stats/contributors -O contributors
 
-  if [[ ! -f contributors ]] ; 
+  n_lines=`wc contributors --lines | cut -d " " -f 1`
+
+  if [[ $n_lines == 0 ]] ; 
   then 
+    rm contributors
     echo "0"
     return
   fi
