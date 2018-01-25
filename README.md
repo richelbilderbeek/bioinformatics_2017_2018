@@ -41,6 +41,9 @@ First lecture starts *sharply* at the time indicated.
 
  * Fork this repo
  * Modify the file called `grade_me.txt`:
+    * `ownername`: the owner of the repository
+    * `reponame`: the name of the repository
+    * `committername`: your name
  * Create a Pull Request. If your Pull Request improves this repository, mention it in the commit message
  * Check the Travis build log, as it contains your grade
  * If Travis CI gives an incorrect grade (it can be fooled), add this as a comment
@@ -81,5 +84,3 @@ Grades will be entered before Saturday 27th January at 17:00.
  * [CppCast episode 103: Travis CI with Richel Bilderbeek](https://www.youtube.com/watch?v=p30AA9JLVJY) by Jason Turner and Rob Irving
  * [C++ Weekly, episode 79: Intro To Travis CI](https://www.youtube.com/watch?v=3ulKzD2cmSw) by Jason Turner
  * [a search engine that does not track you](https://duckduckgo.com)
-
-![An R](R.png)
