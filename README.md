@@ -6,6 +6,8 @@ master|[![Build Status](https://travis-ci.org/richelbilderbeek/bioinformatics_20
 
 Practical Informatics for Biologists is a course at the University of Groningen 2017-2018.
 
+[![IRC Network](https://img.shields.io/badge/irc-%23bioinformatics_2017-2018-blue.svg "IRC Freenode")](https://webchat.freenode.net/?channels=bioinformatics_2017-2018)
+
 ## Schedule
 
 Time|What
