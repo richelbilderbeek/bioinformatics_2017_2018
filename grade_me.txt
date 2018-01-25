@@ -1,2 +1,3 @@
-username: richelbilderbeek
-reponame: bioinformatics_2017_2018
+ownername: isocpp
+reponame: CppCoreGuidelines
+committername: richelbilderbeek

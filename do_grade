@@ -3,8 +3,9 @@
 source ./functions
 
 echo "---------------------------------"
-echo "User name: "`get_username grade_me.txt`
+echo "Owner name: "`get_ownername grade_me.txt`
 echo "Repo name: "`get_reponame grade_me.txt`
+echo "Committer name: "`get_committername grade_me.txt`
 echo "---------------------------------"
 grade=`get_grade grade_me.txt`
 echo "---------------------------------"

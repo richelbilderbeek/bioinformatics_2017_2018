@@ -242,37 +242,39 @@ function count_commits {
 # Get the number of points, for a known user and repo
 # @param $1: username
 # @param $2: reponame
+# @param $3: committername
 # @return 1 if pass, 0 if fails
 function get_points {
 
-  username=$1
+  ownername=$1
   reponame=$2
+  committername=$3
 
   # Start grading
 
   # 1. Do correct_cpp_scoreboard
-  point_one=`pass_build $username correct_cpp_scoreboard`
+  point_one=`pass_build $committername correct_cpp_scoreboard`
 
   # 2. Do correct_cpp_hello
-  point_two=`pass_build $username correct_cpp_hello`
+  point_two=`pass_build $committername correct_cpp_hello`
 
   # 3. Have a README.md at repo
-  point_three=`has_readme $username $reponame`
+  point_three=`has_readme $ownername $reponame`
   
   # 4. Have a README.md with a picture
-  point_four=`has_readme_with_picture $username $reponame`
+  point_four=`has_readme_with_picture $ownername $reponame`
 
   # 5. Have a README.md with a presentation
-  point_five=`has_readme_with_presentation $username $reponame`
+  point_five=`has_readme_with_presentation $ownername $reponame`
 
   # 6. Have a .travis.yml with proselint
-  point_six=`has_travis_with_proselint $username $reponame`
+  point_six=`has_travis_with_proselint $ownername $reponame`
 
   # 7. Have a .travis.yml that checks dead links
-  point_seven=`has_travis_find_find_dead_links $username $reponame`
+  point_seven=`has_travis_find_find_dead_links $ownername $reponame`
 
   # 8. Have a .travis.yml that runs a Python script
-  point_eight=`has_travis_with_python $username $reponame`
+  point_eight=`has_travis_with_python $ownername $reponame`
 
   # Show report
   echo >&2 "Report"
@@ -293,7 +295,7 @@ function get_points {
 # Get the username from file
 # @param $1: filename
 # @return the username
-function get_username {
+function get_ownername {
 
   filename=$1
 
@@ -304,19 +306,18 @@ function get_username {
     return
   fi
 
-  # Username is in the first line, after a whitespace
+  # Ownername is in the first line, after a whitespace
   username=`cat $filename | head -n 1 | tail -n 1 | cut -d " " -f 2`
   echo $username
 }
 
 # Get the reponame from file
 # @param $1: filename
-# @return the username
+# @return the repository's name
 function get_reponame {
 
   filename=$1
 
-  # No text file results in the grade 1
   if [[ ! -f $filename ]] ; 
   then
     echo "[unknown]"
@@ -326,6 +327,24 @@ function get_reponame {
   # Username is in the first line, after a whitespace
   reponame=`cat $filename | head -n 2 | tail -n 1 | cut -d " " -f 2`
   echo $reponame
+}
+
+# Get the committername from file
+# @param $1: filename
+# @return the committer's name
+function get_committername {
+
+  filename=$1
+
+  if [[ ! -f $filename ]] ; 
+  then
+    echo "[unknown]"
+    return
+  fi
+
+  # Username is in the first line, after a whitespace
+  committername=`cat $filename | head -n 3 | tail -n 1 | cut -d " " -f 2`
+  echo $committername
 }
 
 
@@ -344,16 +363,14 @@ function get_grade {
     return
   fi
 
-  # Username is in the first line, after a whitespace
-  username=`cat $filename | head -n 1 | tail -n 1 | cut -d " " -f 2`
-
-  # Reponame is in the first line, after a whitespace
-  reponame=`cat $filename | head -n 2 | tail -n 1 | cut -d " " -f 2`
+  ownername=`get_ownername $filename`
+  reponame=`get_reponame $filename`
+  committername=`get_committername $filename`
 
   # echo >&2 "Username: "$username
   # echo >&2 "Reponame: "$reponame
  
-  grade=`get_points $username $reponame`
+  grade=`get_points $username $reponame $committername`
   if [[ $grade < 1 ]]; 
   then 
     echo "1"; 

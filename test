@@ -2,6 +2,26 @@
 
 source ./functions
 
+test_get_username_absent_file()
+{
+  if [[ -f tmp.txt ]] ; then rm tmp.txt; fi
+  assertEquals "[unknown]" `get_ownername tmp.txt`
+  assertEquals "[unknown]" `get_reponame tmp.txt`
+  assertEquals "[unknown]" `get_committername tmp.txt`
+}
+
+test_get_username()
+{
+  if [[ -f tmp.txt ]] ; then rm tmp.txt; fi
+  echo "ownername: my_ownername" > tmp.txt
+  echo "reponame: my_reponame" >> tmp.txt
+  echo "committername: my_committername" >> tmp.txt
+  assertEquals "my_ownername" `get_ownername tmp.txt`
+  assertEquals "my_reponame" `get_reponame tmp.txt`
+  assertEquals "my_committername" `get_committername tmp.txt`
+  rm tmp.txt
+}
+
 test_assert_yes()
 {
   assertTrue "[[ 2 > 1 ]]"
@@ -20,23 +40,6 @@ test_count_commits_absent_user()
 test_count_commits_user()
 {
   assertEquals 706 `count_commits richelbilderbeek Cer2016 richelbilderbeek`
-}
-
-test_get_username_absent_file()
-{
-  if [[ -f tmp.txt ]] ; then rm tmp.txt; fi
-  assertEquals "[unknown]" `get_username tmp.txt`
-  assertEquals "[unknown]" `get_reponame tmp.txt`
-}
-
-test_get_username()
-{
-  if [[ -f tmp.txt ]] ; then rm tmp.txt; fi
-  echo "username: my_username" > tmp.txt
-  echo "reponame: my_reponame" >> tmp.txt
-  assertEquals "my_username" `get_username tmp.txt`
-  assertEquals "my_reponame" `get_reponame tmp.txt`
-  rm tmp.txt
 }
 
 test_has_travis_with_python_absent_repo()
