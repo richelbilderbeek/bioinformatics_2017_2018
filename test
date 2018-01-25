@@ -2,6 +2,16 @@
 
 source ./functions
 
+test_has_many_commits_yes()
+{
+  assertEquals 1 `has_many_commits richelbilderbeek Cer2016 richelbilderbeek`
+}
+
+test_has_many_commits_no()
+{
+  assertEquals 0 `has_many_commits isocpp CppCoreGuidelines richelbilderbeek`
+}
+
 test_get_username_absent_file()
 {
   if [[ -f tmp.txt ]] ; then rm tmp.txt; fi
