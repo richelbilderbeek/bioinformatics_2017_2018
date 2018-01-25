@@ -38,10 +38,10 @@ First lecture starts *sharply* at the time indicated.
 ## Submitting your grade
 
  * Fork this repo
- * Modify the file called `grade_me.txt`:
+ * Modify the file [grade_me.txt](grade_me.txt) by filling in the correct words. There must be a space after the colon.
     * `ownername`: the owner of the repository
     * `reponame`: the name of the repository
-    * `committername`: your name
+    * `committername`: your name, can be same as ownername
  * Create a Pull Request. If your Pull Request improves this repository, mention it in the commit message
  * Check the Travis build log, as it contains your grade
  * If Travis CI gives an incorrect grade (it can be fooled), add this as a comment
