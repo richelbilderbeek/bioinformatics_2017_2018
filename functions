@@ -97,7 +97,7 @@ function has_readme_with_presentation {
   fi 
   wget -q https://raw.githubusercontent.com/$username/$reponame/master/README.md -O tmp.txt
 
-  n_presentations=`egrep "\[.*\]\(.*\.(pdf|ppt|pptx|doc|docx)\)" tmp.txt | wc --lines | cut -f 1 -d " "`
+  n_presentations=`egrep "\[.*\]\(.*\.(odt|odp|pdf|ppt|pptx|doc|docx)\)" tmp.txt | wc --lines | cut -f 1 -d " "`
 
   rm tmp.txt
 
