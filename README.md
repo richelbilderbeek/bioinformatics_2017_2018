@@ -12,11 +12,11 @@ Practical Informatics for Biologists is a course at the University of Groningen 
 
 Time|What
 ---|---
-9:30-10:30 | git & GitHub #1
+9:30-10:30 | git & GitHub #1: how to be a good scientist
 10:30-10:45 | Break
 10:45-11:30 | git & GitHub #2
 11:30-11:45 | Break
-11:45-12:30 | Travis CI #1
+11:45-12:30 | Travis CI #1: how to be a great scientist
 12:30-13:30 | Lunch
 13:30-14:30 | discuss problem iff any + prepare presentations
 14:30-14:45 | Break
@@ -32,8 +32,8 @@ First lecture starts *sharply* at the time indicated.
     * how today works
     * practice the workflow: correct_cpp_scoreboard
  * git & GitHub #2: 
-    * practice the workflow: correct_cpp_hello
-    * what is a merge conflict?
+    * (optional) practice the workflow: correct_cpp_hello
+    * (optional) what is a merge conflict?
  * Travis CI #1: 
     * how does Travis CI help you become a great scientist?
 
@@ -84,4 +84,4 @@ Grades will be entered before Sunday 28th January 17:00.
  * [SDJ articlice about Travis CI and R](https://github.com/richelbilderbeek/sdj_raising_your_code_to_professional_standards), by Richel Bilderbeek
  * [CppCast episode 103: Travis CI with Richel Bilderbeek](https://www.youtube.com/watch?v=p30AA9JLVJY) by Jason Turner and Rob Irving
  * [C++ Weekly, episode 79: Intro To Travis CI](https://www.youtube.com/watch?v=3ulKzD2cmSw) by Jason Turner
- * [Example of data analyis redone, with different conclusions](https://github.com/richelbilderbeek/Bolnick_and_Stutz_2017)
+ * [Example of scientific data analysis redone, with different conclusions](https://github.com/richelbilderbeek/Bolnick_and_Stutz_2017)
