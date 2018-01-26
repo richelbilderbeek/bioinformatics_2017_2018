@@ -1,3 +1,3 @@
-ownername: amaiam
-reponame: amaiam
-committername: amaiam
+ownername: EmmaGerrits
+reponame: EmmaGerrits
+committername: EmmaGerrits
