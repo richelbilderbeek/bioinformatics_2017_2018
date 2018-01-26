@@ -309,7 +309,7 @@ function get_points {
   point_eight=`has_travis_with_python $ownername $reponame`
 
   # 9. Have many commits
-  point_nine=`has_travis_with_python $ownername $reponame $committername`
+  point_nine=`has_many_commits $ownername $reponame $committername`
 
   # Show report
   echo >&2 "Report"
