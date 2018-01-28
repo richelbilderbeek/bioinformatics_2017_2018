@@ -215,7 +215,7 @@ function count_commits {
 
   if [[ $n_lines == 0 ]] ; 
   then 
-    rm contributors
+#    rm contributors
     # echo "no contributors, absent repo" >&2
     echo "0"
     return
@@ -225,19 +225,19 @@ function count_commits {
 
   ./collect_commits.py > commit.txt
 
-  rm contributors
+#  rm contributors
 
   n_lines=`cat commit.txt | egrep $committername | wc --lines | cut -d " " -f 1`
   if [[ $n_lines == 0 ]] ;
   then
-    rm commit.txt
+#   rm commit.txt
     # echo "not a contributor" >&2
     echo "0"
     return
   fi
 
   n_commits=`cat commit.txt | egrep $committername | cut -d "," -f 2`
-  rm commit.txt
+#  rm commit.txt
   echo $n_commits
 }
 
