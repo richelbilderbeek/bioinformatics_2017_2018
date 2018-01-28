@@ -1,3 +1,3 @@
 ownername: madhurya333
-reponame: bioinformatics_2017_2018
+reponame: Project
 committername: madhurya333
