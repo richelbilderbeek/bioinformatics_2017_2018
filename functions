@@ -230,7 +230,7 @@ function count_commits {
   n_lines=`cat commit.txt | egrep $committername | wc --lines | cut -d " " -f 1`
   if [[ $n_lines == 0 ]] ;
   then
-    rm commit.txt
+   rm commit.txt
     # echo "not a contributor" >&2
     echo "0"
     return
