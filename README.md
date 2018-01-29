@@ -79,9 +79,37 @@ Grades will be entered before Sunday 28th January 17:00.
 
  * [git and GitHub](https://github.com/richelbilderbeek/CppPresentations/blob/master/Git.pdf) by Richel Bilderbeek
  * [Correct C++](https://github.com/richelbilderbeek/correct_cpp) by Richel Bilderbeek, course with many guides how to use git, GitHub
- * [An introduction to Git, GitHub and Travis CI for version control and testing for Python](https://medium.com/ellisonleao/an-introduction-to-git-github-and-travis-ci-for-version-control-and-testing-ac97f158f520) by Ellison Leao
  * [Simplify C++ article about Travis CI](https://arne-mertz.de/2017/04/continuous-integration-travis-ci) by Richel Bilderbeek
  * [SDJ articlice about Travis CI and R](https://github.com/richelbilderbeek/sdj_raising_your_code_to_professional_standards), by Richel Bilderbeek
  * [CppCast episode 103: Travis CI with Richel Bilderbeek](https://www.youtube.com/watch?v=p30AA9JLVJY) by Jason Turner and Rob Irving
  * [C++ Weekly, episode 79: Intro To Travis CI](https://www.youtube.com/watch?v=3ulKzD2cmSw) by Jason Turner
  * [Example of scientific data analysis redone, with different conclusions](https://github.com/richelbilderbeek/Bolnick_and_Stutz_2017)
+
+## Reflection
+
+ * Automatic grading was mostly awesome
+    * Do prepare for a grade of 1, if there is a typo in the repo name
+    * Improve how to receive grade and where to view the results
+    * Still one bug: correct_cpp_hello may be off
+ * Do tests some user's grades: there were still two bugs
+ * Students got confused by many GitHub repos: only work on project repo next time
+ * Reward one point for the project repo with a passed build
+ * Some documentation did more bad than good, already removed these
+ * 250 commit challenge worked as intended: some students enjoyed that puzzle
+ * Correct amount of time
+ * Underestimated the amount of time it would take the students to take,
+   should not estimate out loud how short time this will be
+ * Instruction was short, 15 mins per section at most, which is great
+ * Teaching goals reached: many commits, forks, Travis files; the
+   students got plenty of hands-on experience
+
+## Feedback students
+
+ * You teach in an energetic way (as opposite of standing still), which
+   is different than the students are used to. Try to be more relaxed
+   and take the time
+ * In the first hour, you let the students swim. It would be better if you
+   would *tell them* beforehand, so they feel the day's structure  
+
+[feel encouraged to add using a Pull Request] 
+
