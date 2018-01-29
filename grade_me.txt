@@ -1,3 +1,3 @@
-ownername: amaiam
-reponame: amaiam
-committername: amaiam
+ownername: DaniCrow
+reponame: Bioinformatics29
+committername: DaniCrow
