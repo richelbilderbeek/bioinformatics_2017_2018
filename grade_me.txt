@@ -1,3 +1,3 @@
-ownername: LauraStaal
-reponame: README-PBfB
-committername: LauraStaal
+ownername: erikvanhaeringen
+reponame: pcfbcourse
+committername: erikvanhaeringen
